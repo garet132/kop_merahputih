@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 2rem;
+  text-align: center;
+  background: var(--background-gradient);
+}
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+.message {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+}
+.homeLink {
+  font-size: 1.1rem;
+  color: var(--accent-color);
+  text-decoration: underline;
+  transition: opacity 0.2s;
+}
+.homeLink:hover {
+  opacity: 0.8;
+}

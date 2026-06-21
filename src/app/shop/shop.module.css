@@ -1,0 +1,229 @@
+.shopPage {
+  padding: 40px 0 80px 0;
+  background-color: var(--bg-primary);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+}
+
+/* Shop Header and Sorting */
+.mainHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.resultsCount {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobileFilterBtn {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sortSelect {
+  padding: 10px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sortSelect:focus {
+  border-color: var(--accent-cyan);
+}
+
+/* Grid & No Results */
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.noResults {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  gap: 16px;
+}
+
+.noResultsIcon {
+  color: var(--text-muted);
+}
+
+.noResultsTitle {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.noResultsDesc {
+  color: var(--text-secondary);
+  max-width: 320px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Pagination Control */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+}
+
+.pageBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.pageBtn:hover {
+  border-color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.pageBtnActive {
+  background: var(--accent-gradient);
+  color: #080811 !important;
+  border-color: transparent;
+}
+
+.pageBtnDisabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pageBtnDisabled:hover {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+.ellipsis {
+  color: var(--text-muted);
+  padding: 0 4px;
+  user-select: none;
+}
+
+/* Mobile filter overlay */
+.mobileFilterOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-overlay);
+  z-index: 2000;
+  display: flex;
+  justify-content: flex-start;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.mobileFilterOverlayOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobileFilterContent {
+  width: 300px;
+  height: 100%;
+  background: var(--bg-secondary);
+  overflow-y: auto;
+  padding: 24px;
+  transform: translateX(-100%);
+  transition: transform var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobileFilterOverlayOpen .mobileFilterContent {
+  transform: translateX(0);
+}
+
+.closeFilterBtn {
+  align-self: flex-end;
+  padding: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+}
+
+@media (max-width: 1199px) {
+  .productsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebarContainer {
+    display: none; /* Hide desktop sidebar */
+  }
+  
+  .mobileFilterBtn {
+    display: flex;
+  }
+}
+
+@media (max-width: 575px) {
+  .productsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mainHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

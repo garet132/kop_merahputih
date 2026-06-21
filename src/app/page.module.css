@@ -1,0 +1,346 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding-bottom: 80px;
+  background-color: var(--bg-primary);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  padding: 100px 0 80px 0;
+  overflow: hidden;
+  background: radial-gradient(circle at 80% 20%, rgba(127, 29, 29, 0.08) 0%, rgba(168, 85, 247, 0.08) 50%, transparent 100%);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tagline {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  background: rgba(127, 29, 29, 0.05);
+  border: 1px solid rgba(127, 29, 29, 0.2);
+  border-radius: 99px;
+  color: var(--accent-cyan);
+  font-size: 13px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.description {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.heroCtas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Futuristic Phone Mockup SVG */
+.heroVisual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phoneMockup {
+  width: 100%;
+  max-width: 420px;
+  filter: drop-shadow(0 0 35px rgba(127, 29, 29, 0.3));
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Categories Section */
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  transition: all var(--transition-normal);
+  text-align: center;
+}
+
+.categoryCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-cyan);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+}
+
+.categoryIcon {
+  color: var(--accent-cyan);
+  padding: 16px;
+  background: rgba(127, 29, 29, 0.05);
+  border-radius: 50%;
+  transition: all var(--transition-fast);
+}
+
+.categoryCard:hover .categoryIcon {
+  background: var(--accent-gradient);
+  color: #080811;
+  box-shadow: var(--shadow-glow);
+}
+
+.categoryName {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+.categoryCount {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Featured Products & Deals Section */
+.sectionTitleRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.sectionLink {
+  color: var(--accent-cyan);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.sectionLink:hover {
+  text-decoration: underline;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Features Showcase Banner */
+.showcaseBanner {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(241, 245, 249, 0.95) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 60px;
+  overflow: hidden;
+  position: relative;
+  color: var(--text-primary);
+}
+
+.showcaseGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.showcaseBadge {
+  color: var(--accent-purple);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.showcaseTitle {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.showcaseSpecsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.showcaseSpecItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.showcaseCheck {
+  color: var(--accent-cyan);
+}
+
+.showcaseImage {
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  filter: drop-shadow(0 0 20px rgba(127, 29, 29, 0.15));
+}
+
+/* Value Props */
+.propsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.propCard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+.propIcon {
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+}
+
+.propInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.propTitle {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+.propDesc {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1199px) {
+  .productsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .categoriesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .heroContent {
+    align-items: center;
+  }
+  
+  .heroVisual {
+    order: -1;
+  }
+  
+  .title {
+    font-size: 44px;
+  }
+  
+  .showcaseGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .showcaseBanner {
+    padding: 40px;
+  }
+  
+  .propsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    gap: 60px;
+  }
+  
+  .productsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .categoriesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .productsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .categoriesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .propsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .title {
+    font-size: 36px;
+  }
+  
+  .showcaseTitle {
+    font-size: 28px;
+  }
+}
